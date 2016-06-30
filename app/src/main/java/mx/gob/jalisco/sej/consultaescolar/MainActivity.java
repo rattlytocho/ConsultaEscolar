@@ -1,5 +1,8 @@
 package mx.gob.jalisco.sej.consultaescolar;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -12,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,15 +23,22 @@ import java.util.List;
 import mx.gob.jalisco.sej.consultaescolar.fragments.NotificationsFragment;
 import mx.gob.jalisco.sej.consultaescolar.fragments.SchoolFragment;
 import mx.gob.jalisco.sej.consultaescolar.fragments.ServicesFragment;
+import mx.gob.jalisco.sej.consultaescolar.services.NotifyService;
+import mx.gob.jalisco.sej.consultaescolar.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private int[] tabIcons = {
-        R.drawable.ic_action_social_school_primary,
-        R.drawable.ic_action_icono_escuela_primary,
-        R.drawable.ic_action_social_notifications_none_primary
+            R.drawable.ic_action_social_school_white,
+            R.drawable.ic_action_icono_escuela_white,
+            R.drawable.ic_action_social_notifications_white
     };
+    PendingIntent pendingIntent;
+
+    public static final String PREF_USER_FIRST_TIME = "user_first_time";
+
+    boolean isUserFirstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +51,24 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
+        Intent alarmIntent = new Intent(MainActivity.this, NotifyService.class);
+        pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, alarmIntent, 0);
+
+        isUserFirstTime = Boolean.valueOf(Utils.readSharedSetting(MainActivity.this, PREF_USER_FIRST_TIME, "true"));
+        if(isUserFirstTime){
+            Utils.saveSharedSetting(MainActivity.this,NotifyService.PREF_USER_LAST_NOTIFICACTION,"0");
+            Utils.saveSharedSetting(MainActivity.this,PREF_USER_FIRST_TIME,"false");
+        }
+
+        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        manager.cancel(pendingIntent);
+
+
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
         setupTabIcons();
+
+        enableNotifications();
     }
 
     @Override
@@ -61,11 +86,12 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        Intent intent;
-
-        //noinspection SimplifiableIfStatement
         if(id == R.id.action_share) {
-
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=mx.gob.jalisco.sej.consultaescolar");
+            shareIntent.setType("text/plain");
+            startActivity(shareIntent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -122,6 +148,14 @@ public class MainActivity extends AppCompatActivity {
             //return mFragmentTitleList.get(position);
             return null;
         }
+    }
+
+    public void enableNotifications(){
+        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+        long updateInterval = 30000;
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + updateInterval, updateInterval, pendingIntent);
+
     }
 
 }
