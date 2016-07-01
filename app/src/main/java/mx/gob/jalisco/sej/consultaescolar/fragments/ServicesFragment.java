@@ -63,14 +63,12 @@ public class ServicesFragment extends Fragment {
         items = new ArrayList<>();
 
         View view = inflater.inflate(R.layout.fragment_services, container, false);
-
         recycler = (RecyclerView) view.findViewById(R.id.recycler);
-
         lManager = new LinearLayoutManager(getActivity());
         recycler.setLayoutManager(lManager);
-        items.add(new Card("http://inscripciones.jalisco.gob.mx/inscribe/","Asignación",R.drawable.asignacion_baja));
+        items.add(new Card("http://inscripciones.jalisco.gob.mx/inscribe/","Asignación de Estudiantes ciclo escolar 2016-2017",R.drawable.asignacion_baja));
         items.add(new Card("http://consultaescolar.jalisco.gob.mx/escolar/login","Consulta de calificaciones",R.drawable.consulta_calificaciones_baja));
-        items.add(new Card("http://consultaescolar.jalisco.gob.mx/escolar/certificado","Imprime tu certificado",R.drawable.imprime_certificado_baja));
+        items.add(new Card("http://consultaescolar.jalisco.gob.mx/escolar/certificado","Descarga tu certificado",R.drawable.imprime_certificado_baja));
         items.add(new Card("http://inscripciones.jalisco.gob.mx/inscribe/","Inscripciones",R.drawable.inscripciones_baja));
 
         adapter = new CardsAdapter(items, getContext());

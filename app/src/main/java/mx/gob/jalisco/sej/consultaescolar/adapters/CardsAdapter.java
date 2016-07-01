@@ -34,7 +34,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder>{
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
-        public TextView text;
+        public TextView title;
         public ImageView img;
         public RelativeLayout to;
 
@@ -42,7 +42,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder>{
             super(v);
 
             img = (ImageView) v.findViewById(R.id.image);
-            //text = (TextView) v.findViewById(R.id.text);
+            title = (TextView) v.findViewById(R.id.title);
             to = (RelativeLayout) v.findViewById(R.id.to);
         }
     }
@@ -67,6 +67,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder>{
         //viewHolder.text.setText(items.get(i).getText());
 
         viewHolder.img.setImageResource(items.get(i).getImage());
+        viewHolder.title.setText(items.get(i).getText());
 
         final int item = i;
 
