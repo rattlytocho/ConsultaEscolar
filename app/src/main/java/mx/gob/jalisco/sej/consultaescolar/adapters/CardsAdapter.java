@@ -76,6 +76,9 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder>{
             @Override
             public void onClick(View v) {
 
+
+
+
                 if(items.get(item).getText() == "Descarga tu certificado"){
                     String url = items.get(item).getUrl();
                     Intent i = new Intent(Intent.ACTION_VIEW);
