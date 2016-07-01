@@ -70,7 +70,7 @@ public class ServicesFragment extends Fragment {
         recycler.setLayoutManager(lManager);
         items.add(new Card("http://inscripciones.jalisco.gob.mx/inscribe/","Asignación",R.drawable.asignacion_baja));
         items.add(new Card("http://consultaescolar.jalisco.gob.mx/escolar/login","Consulta de calificaciones",R.drawable.consulta_calificaciones_baja));
-        items.add(new Card("http://consultaescolar.jalisco.gob.mx/escolar/certificado","Imprime tiu cetificado",R.drawable.imprime_certificado_baja));
+        items.add(new Card("http://consultaescolar.jalisco.gob.mx/escolar/certificado","Imprime tu certificado",R.drawable.imprime_certificado_baja));
         items.add(new Card("http://inscripciones.jalisco.gob.mx/inscribe/","Inscripciones",R.drawable.inscripciones_baja));
 
         adapter = new CardsAdapter(items, getContext());

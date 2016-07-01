@@ -1,11 +1,21 @@
 package mx.gob.jalisco.sej.consultaescolar;
 
+
+import android.app.DownloadManager;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.webkit.CookieManager;
+import android.webkit.DownloadListener;
+import android.webkit.URLUtil;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class ViewPage extends AppCompatActivity {
 
@@ -29,14 +39,29 @@ public class ViewPage extends AppCompatActivity {
 
         WebView webview = (WebView) findViewById(R.id.viewPage);
         assert webview != null;
-        webview.setWebChromeClient(new WebChromeClient());
         webview.setWebViewClient(new WebViewClient());
-        webview.clearCache(true);
-        webview.clearHistory();
+        webview.getSettings().setDomStorageEnabled(true);
         webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setAllowFileAccess(true);
         webview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
         webview.loadUrl(URL);
+
+
+        webview.setDownloadListener(new DownloadListener()
+        {
+            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength)
+            {
+                //for downloading directly through download manager
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "download");
+                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                dm.enqueue(request);
+            }
+        });
+
     }
 
 }
