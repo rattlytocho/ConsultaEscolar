@@ -2,6 +2,7 @@ package mx.gob.jalisco.sej.consultaescolar.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.BundleCompat;
 import android.support.v7.widget.RecyclerView;
@@ -74,13 +75,20 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder>{
         viewHolder.to.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ViewPage.class);
 
-                Bundle bundle = new Bundle();
-                bundle.putString("URL",items.get(item).getUrl());
-                bundle.putString("TITLE",items.get(item).getText());
-                intent.putExtras(bundle);
-                context.startActivity(intent);
+                if(items.get(item).getText() == "Descarga tu certificado"){
+                    String url = items.get(item).getUrl();
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    context.startActivity(i);
+                }else{
+                    Intent intent = new Intent(context, ViewPage.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("URL",items.get(item).getUrl());
+                    bundle.putString("TITLE",items.get(item).getText());
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+                }
             }
         });
         setFadeAnimation(viewHolder.itemView);
