@@ -12,6 +12,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
@@ -188,9 +189,8 @@ public class NotifyService extends BroadcastReceiver {
                         .setSound(sound)
                         .setVibrate(pattern);
 
-                Intent notIintent = new Intent(ctx,MainActivity.class);
-
-                PendingIntent contIntent = PendingIntent.getActivity(ctx,0,notIintent,0);
+                Intent notIintent = new Intent(ctx, MainActivity.class);
+                PendingIntent contIntent = PendingIntent.getActivity(ctx,0,notIintent,PendingIntent.FLAG_CANCEL_CURRENT);
                 mBuilder.setContentIntent(contIntent);
                 NotificationManager mNotificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
                 mNotificationManager.notify(0,mBuilder.build());

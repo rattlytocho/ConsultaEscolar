@@ -36,7 +36,6 @@ public class ViewPage extends AppCompatActivity {
             getSupportActionBar().setTitle(TITLE);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
         WebView webview = (WebView) findViewById(R.id.viewPage);
         assert webview != null;
         webview.setWebViewClient(new WebViewClient());
