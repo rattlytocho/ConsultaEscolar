@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "mx.gob.jalisco.sej.consultaescolar"
+        applicationId "mx.gob.jalisco.edu.consultaescolar"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1

@@ -1,4 +1,4 @@
-package mx.gob.jalisco.sej.consultaescolar.services;
+package mx.gob.jalisco.edu.consultaescolar.services;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,15 +12,14 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
-import mx.gob.jalisco.sej.consultaescolar.MainActivity;
-import mx.gob.jalisco.sej.consultaescolar.utils.NetworkUtils;
-import mx.gob.jalisco.sej.consultaescolar.R;
-import mx.gob.jalisco.sej.consultaescolar.utils.Utils;
+import mx.gob.jalisco.edu.consultaescolar.MainActivity;
+import mx.gob.jalisco.edu.consultaescolar.utils.NetworkUtils;
+import mx.gob.jalisco.edu.consultaescolar.R;
+import mx.gob.jalisco.edu.consultaescolar.utils.Utils;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

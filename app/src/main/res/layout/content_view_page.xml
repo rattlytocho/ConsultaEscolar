@@ -9,7 +9,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="mx.gob.jalisco.sej.consultaescolar.ViewPage"
+    tools:context="mx.gob.jalisco.edu.consultaescolar.ViewPage"
     tools:showIn="@layout/activity_view_page">
 
     <WebView

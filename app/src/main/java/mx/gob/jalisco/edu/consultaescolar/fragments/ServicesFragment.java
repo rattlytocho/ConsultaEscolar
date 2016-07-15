@@ -1,4 +1,4 @@
-package mx.gob.jalisco.sej.consultaescolar.fragments;
+package mx.gob.jalisco.edu.consultaescolar.fragments;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import mx.gob.jalisco.sej.consultaescolar.R;
-import mx.gob.jalisco.sej.consultaescolar.adapters.CardsAdapter;
-import mx.gob.jalisco.sej.consultaescolar.objects.Card;
+import mx.gob.jalisco.edu.consultaescolar.R;
+import mx.gob.jalisco.edu.consultaescolar.adapters.CardsAdapter;
+import mx.gob.jalisco.edu.consultaescolar.objects.Card;
 
 public class ServicesFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

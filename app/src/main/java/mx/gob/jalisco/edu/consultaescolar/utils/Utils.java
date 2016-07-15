@@ -1,4 +1,4 @@
-package mx.gob.jalisco.sej.consultaescolar.utils;
+package mx.gob.jalisco.edu.consultaescolar.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,7 +6,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 
-import mx.gob.jalisco.sej.consultaescolar.R;
+import mx.gob.jalisco.edu.consultaescolar.R;
 
 /**
  * Created by root on 29/06/16.

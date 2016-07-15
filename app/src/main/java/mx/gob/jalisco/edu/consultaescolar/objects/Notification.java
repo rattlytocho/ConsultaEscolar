@@ -1,4 +1,4 @@
-package mx.gob.jalisco.sej.consultaescolar.objects;
+package mx.gob.jalisco.edu.consultaescolar.objects;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package mx.gob.jalisco.sej.consultaescolar;
+package mx.gob.jalisco.edu.consultaescolar;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -12,22 +12,19 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-import mx.gob.jalisco.sej.consultaescolar.fragments.NotificationsFragment;
-import mx.gob.jalisco.sej.consultaescolar.fragments.SchoolFragment;
-import mx.gob.jalisco.sej.consultaescolar.fragments.ServicesFragment;
-import mx.gob.jalisco.sej.consultaescolar.services.NotifyService;
-import mx.gob.jalisco.sej.consultaescolar.utils.Utils;
+import mx.gob.jalisco.edu.consultaescolar.fragments.NotificationsFragment;
+import mx.gob.jalisco.edu.consultaescolar.fragments.SchoolFragment;
+import mx.gob.jalisco.edu.consultaescolar.fragments.ServicesFragment;
+import mx.gob.jalisco.edu.consultaescolar.services.NotifyService;
+import mx.gob.jalisco.edu.consultaescolar.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView titleApp = (TextView) findViewById(R.id.titleApp);
-        titleApp.setText("Consulta Escolar");
+        titleApp.setText("Consulta Escolar Jalisco");
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         if (toolbar != null) {

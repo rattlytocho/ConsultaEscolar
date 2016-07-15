@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mx.gob.jalisco.sej.consultaescolar.fragments.SchoolFragment">
+    tools:context="mx.gob.jalisco.edu.consultaescolar.fragments.SchoolFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"

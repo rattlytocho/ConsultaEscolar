@@ -1,6 +1,6 @@
 /*___Generated_by_IDEA___*/
 
-package mx.gob.jalisco.sej.consultaescolar;
+package mx.gob.jalisco.edu.consultaescolar;
 
 /* This stub is only used by the IDE. It is NOT the R class actually packed into the APK */
 public final class R {

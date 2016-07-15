@@ -1,4 +1,4 @@
-package mx.gob.jalisco.sej.consultaescolar.utils;
+package mx.gob.jalisco.edu.consultaescolar.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

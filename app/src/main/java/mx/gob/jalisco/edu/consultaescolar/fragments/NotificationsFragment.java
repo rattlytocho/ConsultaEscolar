@@ -1,17 +1,14 @@
-package mx.gob.jalisco.sej.consultaescolar.fragments;
+package mx.gob.jalisco.edu.consultaescolar.fragments;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -27,10 +24,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import mx.gob.jalisco.sej.consultaescolar.R;
-import mx.gob.jalisco.sej.consultaescolar.adapters.NotificationAdapter;
-import mx.gob.jalisco.sej.consultaescolar.objects.Notification;
-import mx.gob.jalisco.sej.consultaescolar.utils.NetworkUtils;
+import mx.gob.jalisco.edu.consultaescolar.R;
+import mx.gob.jalisco.edu.consultaescolar.adapters.NotificationAdapter;
+import mx.gob.jalisco.edu.consultaescolar.objects.Notification;
+import mx.gob.jalisco.edu.consultaescolar.utils.NetworkUtils;
 
 /**
  * A simple {@link Fragment} subclass.

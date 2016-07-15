@@ -1,10 +1,9 @@
-package mx.gob.jalisco.sej.consultaescolar.adapters;
+package mx.gob.jalisco.edu.consultaescolar.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.BundleCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +14,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
-import mx.gob.jalisco.sej.consultaescolar.R;
-import mx.gob.jalisco.sej.consultaescolar.ViewPage;
-import mx.gob.jalisco.sej.consultaescolar.objects.Card;
+import mx.gob.jalisco.edu.consultaescolar.R;
+import mx.gob.jalisco.edu.consultaescolar.ViewPage;
+import mx.gob.jalisco.edu.consultaescolar.objects.Card;
 
 /**
  * Created by root on 28/06/16.
