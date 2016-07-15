@@ -8,8 +8,8 @@ android {
         applicationId "mx.gob.jalisco.edu.consultaescolar"
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "2.01"
     }
     buildTypes {
         release {
